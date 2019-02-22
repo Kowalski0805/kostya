@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "lts/*"
+jobs:
+  include:
+    - stage: test
+      script: npm run lint
+    - # stage name not required, will continue to use `test`
+      script: npm run build
+    - stage: deploy
+      script: npm run deploy
